@@ -6,16 +6,16 @@ import com.masivian.roulette.util.Constants;
 
 public class BetDTO {
 	
-	@JsonProperty("user")
+	@JsonProperty("usuario")
 	private String user;
 
-	@JsonProperty("value")
+	@JsonProperty("valor")
 	private String betValue;
 	
-	@JsonProperty("amount")
+	@JsonProperty("cantidad")
 	private Integer amount;
 	
-	@JsonProperty("result")
+	@JsonProperty("resultado")
 	private String result;
 
 	public BetDTO(String user,String betValue, Integer amount,String result) {

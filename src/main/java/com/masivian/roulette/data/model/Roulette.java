@@ -10,19 +10,19 @@ import org.springframework.data.redis.core.RedisHash;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.masivian.roulette.util.dto.BetDTO;
 
-@RedisHash("roulette")
+@RedisHash("ruleta")
 public class Roulette {
 
 	@Id
 	private String id;
 	
-	@JsonProperty("state")
+	@JsonProperty("estado")
 	private String state;
 		
-	@JsonProperty("bets")
+	@JsonProperty("apuestas")
 	private List<BetDTO> bets;
 	
-	@JsonProperty("lastResults")
+	@JsonProperty("ultimoResultado")
 	private String lastResults;
 	
 	public Roulette() {

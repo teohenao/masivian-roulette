@@ -31,7 +31,7 @@ public class RouletteController implements IRouletteController {
 	@GetMapping(Constants.GET_ALL_ROULETTES)
 	public ResponseEntity<Response> getAllRoulettes() {
 		Response response = new Response(HttpStatus.OK, Constants.RESPONSE_OK);
-		response.addPayload("roulettes", rouletteService.getRoulettes());
+		response.addPayload("ruletas", rouletteService.getRoulettes());
 
 		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
@@ -40,7 +40,7 @@ public class RouletteController implements IRouletteController {
 	@PostMapping(Constants.POST_ROULETTE)
 	public ResponseEntity<Response> createRoulette() {
 		Response response = new Response(HttpStatus.CREATED, Constants.CREATED_MESSAGE);
-		response.addPayload("idRoulette", rouletteService.createRoulette());
+		response.addPayload("idRuleta", rouletteService.createRoulette());
 
 		return new ResponseEntity<>(response, HttpStatus.CREATED);
 	}
@@ -69,7 +69,7 @@ public class RouletteController implements IRouletteController {
 				return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
 			} else if (roulette.isPresent()) {
 				Response response = new Response(HttpStatus.OK, Constants.RESPONSE_OK);
-				response.addPayload("roulette", roulette.get());
+				response.addPayload("ruleta", roulette.get());
 				return new ResponseEntity<>(response, HttpStatus.OK);
 			} else {
 				Response response = new Response(HttpStatus.NOT_FOUND, Constants.NOT_FOUND_MESSAGE);
@@ -91,7 +91,7 @@ public class RouletteController implements IRouletteController {
 			return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
 		}
 		Response response = new Response(HttpStatus.OK, Constants.RESPONSE_OK);
-		response.addPayload("results", rouletteDTO);
+		response.addPayload("resultados", rouletteDTO);
 		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
 }
