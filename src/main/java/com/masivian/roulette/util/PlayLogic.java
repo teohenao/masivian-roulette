@@ -21,13 +21,16 @@ public class PlayLogic {
 				color = color == 0 ? 1 : 0;
 			}
 		}
+		
 		return roulette;
 	}
 	
 	public static Boolean isWinner(int number,String color,String value){
 		if(value.equals(color) || String.valueOf(number).equals(value)) {
+			
 			return true;
 		}else 
+			
 			return false;
 	}
 }

@@ -51,9 +51,11 @@ public class RouletteController implements IRouletteController {
 		Optional<Roulette> roulette = rouletteService.openRoulette(id);
 		if (!roulette.isPresent()) {
 			Response response = new Response(HttpStatus.NOT_FOUND, Constants.NOT_FOUND_MESSAGE);
+			
 			return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
 		}
 		Response response = new Response(HttpStatus.OK, Constants.RESPONSE_OK);
+		
 		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
 
@@ -66,17 +68,21 @@ public class RouletteController implements IRouletteController {
 			Optional<Roulette> roulette = rouletteService.wager(bet, id);
 			if (roulette == null) {
 				Response response = new Response(HttpStatus.OK, Constants.BAD_ROULETTE_CLOSED);
+				
 				return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
 			} else if (roulette.isPresent()) {
 				Response response = new Response(HttpStatus.OK, Constants.RESPONSE_OK);
 				response.addPayload("ruleta", roulette.get());
+				
 				return new ResponseEntity<>(response, HttpStatus.OK);
 			} else {
 				Response response = new Response(HttpStatus.NOT_FOUND, Constants.NOT_FOUND_MESSAGE);
+				
 				return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
 			}
 		} else {
 			Response response = new Response(HttpStatus.BAD_REQUEST, Constants.BAD_REQUEST_MESSAGE);
+			
 			return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
 		}
 	}
@@ -88,10 +94,12 @@ public class RouletteController implements IRouletteController {
 
 		if (rouletteDTO == null) {
 			Response response = new Response(HttpStatus.NOT_FOUND, Constants.NOT_FOUND_MESSAGE);
+			
 			return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
 		}
 		Response response = new Response(HttpStatus.OK, Constants.RESPONSE_OK);
 		response.addPayload("resultados", rouletteDTO);
+		
 		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
 }

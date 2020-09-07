@@ -16,7 +16,7 @@ public class RouletteDTO {
 	@JsonProperty("apuestas")
 	private List<BetDTO> bets;
 	
-	@JsonProperty("ultimoResultados")
+	@JsonProperty("ultimoResultado")
 	private String lastResults;
 	
 	public RouletteDTO(Roulette roulette) {

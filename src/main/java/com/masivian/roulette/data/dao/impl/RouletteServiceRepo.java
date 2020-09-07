@@ -39,6 +39,7 @@ public class RouletteServiceRepo implements IRouletteServiceRepo {
 		Roulette roulette = new Roulette();
 		roulette.setState(Constants.ROULETTE_CLOSED);
 		roulette.setLastResults(Constants.RESULTS_EMPTY);
+		
 		return rouletteRepo.save(roulette).getId();
 	}
 
@@ -65,6 +66,7 @@ public class RouletteServiceRepo implements IRouletteServiceRepo {
 			} else
 				return null;
 		}
+		
 		return roulette;
 	}
 
@@ -86,8 +88,10 @@ public class RouletteServiceRepo implements IRouletteServiceRepo {
 			r.setBets(new ArrayList<>());
 			rouletteRepo.save(r);
 			r.setBets(bets);
+			
 			return new RouletteDTO(r);
 		} else
+			
 			return null;
 
 	}
