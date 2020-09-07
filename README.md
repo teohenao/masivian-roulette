@@ -11,5 +11,10 @@
 - Crear una nueva ruleta -> http://localhost:8080/ruleta/crear
 - Obtener todas las ruletas -> http://localhost:8080/ruleta/obtenerruletas
 - Abrir una ruleta -> http://localhost:8080/ruleta/abrirruleta/"ID_RULETA"
-- Apostar en una ruleta -> http://localhost:8080/ruleta/apostar/"ID_RULETA"  body -> valor,cantidad. header -> user : "USER"
+- Apostar en una ruleta -> http://localhost:8080/ruleta/apostar/"ID_RULETA"  
+  body -> 
+  valor = "Color "Negro,Rojo" o numero del 0 hasta el 36
+  cantidad = valor apuesta
+  header -> 
+  user : "USER"
 - Cerrrar la ruleta -> http://localhost:8080/ruleta/cerrarruleta/"ID_RULETA"
